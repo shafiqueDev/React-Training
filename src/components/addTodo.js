@@ -1,21 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class AddTodo extends Component {
-  render() {
-    return (
-      <div className="form-outline">
-        <form onSubmit={this.props.handleChange}>
-          <input
-            className="form-control form-control-sm"
-            type="text"
-            onChange={this.props.changeTodoText}
-            value={this.props.value}
-          />
-          <button type="submit" className="btn btn-primary  m-2">
-            AddTodo
-          </button>
-        </form>
-      </div>
-    );
-  }
+export default function AddTodo(props) {
+  return (
+    <div className="form-outline">
+      <form onSubmit={props.handleChange}>
+        <input
+          placeholder="enter some text"
+          className="form-control form-control-sm"
+          type="text"
+          onChange={props.changeTodoText}
+          value={props.value}
+        />
+        <button type="submit" className="btn btn-primary  m-2">
+          AddTodo
+        </button>
+      </form>
+    </div>
+  );
 }
